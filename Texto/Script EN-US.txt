@@ -1,0 +1,397 @@
+[0 - Tela de Menu]
+
+Imagem de um investigador, sentado numa escrivaninha, lendo jornal, com um cigarro na boca e um como de uísque na mesa.
+
+Botão "Nome do jogo"
+  -> Botão "Iniciar"
+    -> Vai para cena 1
+  -> Botão "Opções"
+    -> Abre as opções
+  -> Botão "Sair"
+    -> Fecha o jogo
+
+
+[1 - Início]
+
+Imagem do investigador, com um plano mais aberto (ou de costas), mostrando a porta de entrada do escritório (logo de olho no vidro, escrito PI, pro lado de fora)
+
+Texto
+  Pensamento
+    "In this town, not everything is what it seems.
+    I was in my office, when it happened. 'Another day in this hellhole', I thought to myself.
+    That's when I saw her."
+
+Transição automática de cena
+
+[2 - A Loira]
+
+Imagem da Loira, no meio do escritório, porta aberta ao fundo.
+Loira alta, magra, com vestido de peça única até a canela, vermelho vivo e um chapéu de abas longas cobrindo a parte dos olhos.
+Carrega a carteira (daquelas mais alongadas) nas mãos, juntas na frente do corpo.
+
+Texto
+  Diálogo
+    "I've heard you are the best PI in town. Have I heard wrong?" - Jean
+
+    "That depends, lady, for what job. Let me take a bet, lost your puppy at the park?" - Henry
+
+    "The matter is a tad more serious than that, unfortunately. My house was broken in, and my husband is missing.
+    Oswald doesn't usually goes away like this, and I don't know who to ask for help." - Jean
+
+    "Do you have a phone, ma'am? The operator can put you in touch with the deputy. A middle-aged man does not disappear all of a sudden like that." - Henry
+
+    "Police won't help me, not in MY speed. Well, fine, if it's not for money that you work for, sir, I'll find who will." - Jean
+
+    "Chivalry is for the young, ma'am. Fine, I'll take the job. Let me get my coat." - Henry
+
+Transição automática de cena
+
+[3.1 - Centro do escritório]
+
+Centro do escritório de Oswald.
+Mesa pesada de madeira maciça, fechada na frente, com poltrona de couro. Gavetas jogadas no chão, papel por toda parte.
+Duas janelas ao fundo, uma delas aberta. Uma pilha de caixas e livros não arquivados encostada abaixo da janela. As caixas abaixo da janela parecem jogadas e amassadas em alguns pontos.
+
+Texto
+  Diálogo (Quando entra pela primeira vez na sala)
+    "Ma'am, before you tell me all of it, and be aware, you will tell me everything, I want you to understand that I'll ask questions.
+    And that questions may not be fun. I hope you know that my work here depends on your *honesty*[0]." - Henry
+
+  Pop-up de texto Tutorial
+    "You can click on the *highlighted* words, to ask questions about them."
+  Pop-up some quando o jogador clica na [0].
+
+  Diálogo, Resposta [0]
+    "Honesty? You doubt my honesty, already? I'm paying you to help me, not humiliate me. understand your place." - Jean
+
+    "Take it easy, ma'am. That's not what I meant.
+    In my line of work, it more common to be lied to than the opposite, that's all.
+    Anyway, please, tell me all that you know." - Henry
+
+  Diálogo (3.1.A) -> Retorna a Cena 3.1
+    "Very well...
+    Here is where Oswald *used to work*[1]. His entire life is in this documents, this drawers.
+    I *came back*[2] home, to this, this mess, this nonsense.
+    The office door was still *locked*[3], and none of the employees can even enter here.
+    The only appointment Oswald had was a dinner tonight, but that was *cancelled*[4] yesterday." (Gatilho A1)
+
+  Se não passar na resposta [1] -> Retorna a Cena 3.1
+    Diálogo
+      "By the way, what does your husband work with exactly, miss..." - Henry
+
+      "Jean. Jean Fountainne." - Jean
+
+      "Jean Fountainne, from Fountainne Industries?" - Henry
+
+      "That's right." - Loira
+
+      "That answers my question." - Investigador
+
+  Pensamento, Reposta [1] -> Retorna a Diálogo 3.1.A
+    "Used to? Is she that certain that he's dead?"
+
+    Diálogo
+    "Seu marido trabalha com o quê exatamente, senhora..." - Investigador
+    "What does your husband work with, miss..."
+
+    "Jean. Jean Fountainne.
+    My husband takes care of the family business. Fountainne Industries, rings a bell?
+    Is a position with it's dose of enemies." - Jean (Gatilho 4)
+
+  Diálogo, Reposta [2] -> Retorna a Diálogo 3.1.A
+    "Just to make sure, you were out of the house during your husband's disappearance, right?
+    If you don't mind telling me, where were you at the time?" - Henry
+
+    "Yes, I were. I'm a very busy woman.
+    I was at a business meeting, on the north side of town." - Jean (Gatilho 5)
+
+    Pensamento
+    "She's visibly upset with my question. Although powerful people rarely like to justify themselves."
+
+  Diálogo, Resposta [3] -> Retorna a Diálogo 3.1.A
+    "The office has only one door, right? And who keeps the key?" - Henry
+
+    "With Mister Oswald, of course. None else has access." - Jean (Gatilho A2, B1, C1)
+
+  Diálogo, Reposta [4] -> Retorna a Diálogo 3.1.A
+    "Cancelled, was it?" - Henry
+
+    "Yes. A business transaction that stopped making sense." - Jean
+
+
+Interações
+  Gavetas no chão -> Retorna a Cena 3.1
+    Pensamento
+    "All drawers were riffled with. Who ever did this, made a good job. This place is a mess."
+
+  Papeis espalhados -> Retorna a Cena 3.1
+    Pensamento
+      "Papers thrown all about the place. Looks like who ever was here was looking for something.
+      Spreadsheets, letters, time sheets. It seems it's all industry related." (Gatilho B2)
+
+  Copo de Uísque -> Retorna a Cena 3.1
+    Pensamento
+      "This scotch glass has just water in it. A man this rich does not drink water from a scotch glass.
+      Whoever was drinking this did not leave in a hurry, drank all the booze and left only the ice." (Gatilho D1)
+
+  Mesa
+    Pensamento -> Retorna a Cena 3.1
+      "Nice chair. It does seems comfy."
+
+
+  Janela -> Retorna a Cena 3.1
+    Pensamento
+      "Only one window is opened, right behind the desk.
+      If I were to climb out of here, would be easy, I'd just step in this boxes.
+      By the way, some boxes directly below the window seem bruised. Maybe someone did just that."(Gatilho A3, B3 e C2)
+
+Transição para 3.2 e 3.3 por comando do jogador
+
+[3.2 - Esquerda do escritório]
+
+Lateral esquerda do escritório de Oswald
+Estante de livros, cobrindo quase toda a parede. Livros de diversos tamanhos e cores, ainda organizados, mesmo que de alguma maneira não clara a primeiro momento. Pouquíssimos livros estão faltando.
+A parte de cima da estante tem basicamente apenas livros de lombada grossa, cinza escura, todos idênticos. Perfeitamente organizados, nenhum deles está faltando. Este arranjo não vai até o fim da prateleira, tem um aparador no final dos livros (um busto, talvez?)
+
+Interações
+  Livros cinza do topo -> Retorna a Cena 3.2
+    Pensamento
+      "Let's see this books.. Ledgers from recent years. At least 20 years worth of ledgers, in pristine conditions.
+      This info is worth killing for. Whoever made this mess did not see this, or did not care." (Gatilho B4, C4, D3)
+
+  Livros do meio -> Retorna a Cena 3.2
+    Pensamento (Gatilho 2)
+      "Plato, Alighieri, Shakespeare... Knowledgeable, I'd say.
+      Wait a minute. Yes, just as I suspected.
+      This books are just for show.
+      All of this books is in pristine condition, probably were never opened once, with a layer of dust on the cover.
+
+  Livros de baixo -> Retorna a Cena 3.2
+    Pensamento (Gatilho 2)
+      "Dickens, Verne, Tolstoy.. Eclectic.
+      All in excellent condition, but someone should give them a good clean, dust is building up.
+      One of this books is different. The cover looks worn. Machiavelli's *The Prince*[1]. Never read it."
+
+  Resposta [1]
+    Livro aberto, mas com suas páginas cortadas no centro, formando uma caixa oca.
+    Dentro está uma chave (Gatilho 9).
+
+Transição para 3.1 e 3.4 por comando do jogador
+
+[3.3 - Direita do escritório]
+
+Lateral direita do escritório de Oswald
+Uma mesa longa e simples, apenas um tampo e pernas, porém bem construída. Uma maleta fechada sobre a mesa, e diversos livros jogados
+Vários livros jogados no chão.
+A parede ao fundo contem diversos quadros, todos de figuras masculinas bem vestidas.
+
+Interações
+  Livros na mesa -> Retorna a Cena 3.3
+    Pensamento
+    "This table was not spared. Man, what a mess.
+    Let me see. Biology, Philosophy, Economy.. Does not seem to have a lot o *sense*[1] to this mess..
+    (Interação apenas depois do Gatilho 2)
+    Who did this?"
+
+    Resposta [1]
+      Pensamento
+      "Hold on a second.. This books, look a bit random, right?
+      None of them seem worn, ou even opened before. They probably are the ones missing on the shelf over there.
+      All of this look staged. Was there really someone looking for info on Fountainne Industries?" (Gatilho C5, D4)
+
+  Quadros no fundo -> Retorna a Cena 3.3
+    Pensamento
+    "So much old people on the wall. Fountainne linage, I presume. Money and power for decades, so it seems.
+    Imagine what must be like to be born on a silver cradle, built upon the sweat of this city workers, by this white-bearded men.
+    But I digress. I bet that, from all this old folks, just Oswald maybe still lives. If he still lives, of course."(Gatilho 3)
+
+  Maleta
+    Pensamento, sem a chave -> Retorna a Cena 3.3
+
+
+    Pensamento, com a chave (Gatilho 9) -> Pula pra cena 3.3.1
+      "Let's try this key here.. Yeah, it fits."
+
+    Pensamento, com gatilho 8 -> Pula pra cena 3.3.1
+      "Well, miss Jean did gave me permission to look ANYWHERE, right?
+      Ready, set.. 'BAM' OK, case opened, no pun intended. Sorry Oswald."
+
+Transição para 3.1 e 3.4 por comando do jogador
+
+[3.3.1 - Dentro da Maleta]
+
+Maleta sobre a mesa aberta
+Um caderninho de capa de couro, com as iniciais O.F.F. gravadas, com marcador de fita vermelha.
+Sobre ele, um revolver prateado polido, com cabo de madeira. Algumas balas jogadas no fundo da maleta.
+
+Interações
+  Magnum
+    Pensamento
+      "Smith & Wesson .44 special series. 5" barrel for better aiming, type N frame, nickel finish.
+      Three and a half months pay of a police officer. Does not worth much if you can't aim properly, but at least intimidates.
+      All six bullets in the barrel, and some to spare. I bet it was never even tested. What a shame."
+
+  Caderno
+    Pensamento
+      "A personal notebook, with the initials O.F.F., as in Oswald F. Fountainne. That's my guy.
+      Dates, names and places. That's gold. Let's see what it says.
+      Yesterday, 12:15 pm, lunch with Hewitt. Check. 4:00 pm, cocktails with the Mayor. Check. 7:40 pm, meeting with McMillan, canceled.
+      Today, 7:40 pm, meeting with McMillan, again. Looks like it wasn't cancelled after all." (Gatilho 1) (Gatilho C3, D2)
+
+Transição para 3.1 por comando do jogador
+
+Aki *----------------------------------------------------------------------------------*
+
+[3.4 - Fundos do escritório]
+
+Fundo do escritório de Oswald
+Loira parada, próxima a porta, ainda com ar de misteriosa. Ao fundo, uma chapeleira com um casaco de peles masculino e um feminino, e o chapéu da Loira pendurado. Uma carta no chão, próxima ao casaco de peles feminimo.
+Também é visível a porta de entrada do escritório aberta.
+
+Interação
+  Chapeleira
+    Pensamento -> Retorna a Cena 3.4
+      "A *male fur coat*[1], probably Oswald's, and Ms. Fountainne's hat.
+      Indeed, it's not so cold of a night.
+      Mr. Fountainne's suit jacket isn't on the hanger. Maybe he was wearing when he got kidnapped. Sounds odd, though."
+
+    Pensamento, Resposta [1]
+      "Going through a man's pocket isn't exactly the highest point of my carrer, but still.
+      Look at this, a letter from a L.Hewitt."
+
+      Carta
+      'My dear friend, I write you to bring you great news.
+      Our merger seem to get closer by the hour.
+      Already talked to the board, and our plan was approved.
+      It's is a pity that this decision has been giving you much of a headache at home, but I trust that your nose for business is stronger than your emotions.
+      You were never to bend for any one, least of all for your wife.' (Gatilho C6, D5)
+
+    Carta
+      Pensamento
+        "Hey, look. This seems to fallen out of Jean's coat. Let me get it...
+        It's a letter, addressed to a J.L.F.
+        Hold on, J? Jean?
+        This is going to get interesting."
+
+        Carta
+        'Dear Jane, I'd like you to know that your efforts to mess up the merger of Fountainne industries was not gone unnoticed.
+        I have a business proposition for you. I'll cancel my meeting with Oswald, and reschedule for tomorrow.
+        Met me today, same time and place, and we'll discuss details.
+        Sincerely,
+        Owen H. McMillan' (Gatilho D6)
+
+
+  Porta
+    Pensamento -> Retorna a Cena 3.4
+      "This old manor house are always larger and heavier than necessary. They are safe, at least.
+      It's unlikely that someone would break in this door, and there's no sign of it. It was likely *unlocked*[2].
+      Either that, or whoever did this got in another way.. The window, maybe." (Gatilho A4, B5, C7)
+
+    Diálogo, Resposta [2] -> Retorna a Cena 3.4
+      "Ma'am, Mr. Oswald usually locks this door when he's working?
+      If so, who else has this key?" - Henry
+
+      "Yes. Oswald would never leave this door unlocked.
+      The only people who enter this room are Oswald, myself and the house keepers.
+      Even so, only under Mr. Oswald's supervision, or *my own*[3]." - Jean
+
+    Resposta [3] -> Retorna a Cena 3.4
+      Diálogo
+      "So you do have a key, ma'am." - Henry
+
+      "No, I don't. Oswald leaves his with me when needed. There are no copies of his keys." - Jean
+
+      Pensamento
+      "Oswald being thorough with who's accessing his office I buy. I don't buy what she's selling, thought.
+      Full of pride as she is, she's unlikely to have not made a copy. She was alone with the key several times." (Gatilho 6)
+
+  Loira
+    Diálogo -> Retorna a Cena 3.4
+    "Have you already figured who took my husband, Mr. PI?" - Jean
+
+    Pensamento (3.4.A)
+    "*Friends*[1]
+    *Enemies*[2]
+    *How's business*[3]
+    *Threats*[4]
+    *Suspects*[5]"
+
+    Diálogo
+    "Ma'am, I should ask anyway, do I have permission to check anything in this office, right?" - Henry
+
+    "Sure, be my guest." - Jean (Gatilho 8)
+
+    Resposta [1] -> Retorna a Pensamento 3.4.A
+      Diálogo
+      "Mr. Fountainne is a business man, I see. A man this powerful must be well connected." - Henry
+
+      "Is that a question, Mr. PI?
+      Yes, of course. We have the habit of keeping in touch with everyone that matters in this city.
+      Door don't usually remain closed for Mr. Oswald." -Jean
+
+    Resposta [2] -> Retorna a Pensamento 3.4.A
+      Diálogo
+      "The Fountainne family is a powerful one, so it seems. I suppose that does not come without breaking a few eggs. Or people." - Henry
+
+      "What are you implying? Oswald has a spotless reputation, no mere detective for hire would stain it.
+      The answer you are looking for is yes. Yes, Oswald has enemies.
+      Particularly, the Hewitt family has shown great interest in buying part of our business.
+      That has lead to somewhat heat discussions, to say the least, Oswald told me." (Gatilho B6)
+
+      Pensamento
+      "Hewitt? I've heard that name before.. They own industries too."
+
+      Pensamento, com gatilho 6
+      "I believe this lady is trying to frame this Hewitt guy for her husband's disappearance.
+      Why someone would go all this way to merge companies, just to take out the guy?" (Gatilho C8, D7)
+
+    Resposta[3]
+      Diálogo
+      "How is business going, Ms. Fountainne?" - Henry
+
+      "Great, Mr. PI.
+      Oswald has more ambition than anyone in this family ever had.
+      Unfortunately he's also the most stubborn, too..
+      I'm sorry, I should not have told you this, it's not relevant at the time.
+      I'm tired of this conversation, resume your work." - Jean
+
+    Resposta[4]
+      Diálogo
+      "Miss Fountainne, you or your husband received any death threats or something similar this past few days?" - Henry
+
+      "Besides the usual, you mean?
+      We get death threats every day. Some are clearly nonsense, some are from past employees.
+      All sort of scum that sees what we accomplished thinks they have the right to talk." - Jean
+
+    Resposta[5]
+      Diálogo
+      "After all, do you have anyone you suspect?" - Henry
+
+      "To be honest, I do. Oswald was in a business lunch yesterday, with Louis Hewitt.
+      Business between them are not going well, and I don't understand why this damned man keeps visiting this house.
+      In any case, this got heated, and by the lunch's end, it was pretty clear that this man was not messing around anymore." - Jean (Gatilho B7)
+
+      "So you think that this Louis person is up to something?" - Henry
+
+      "Up to, mr. PI?
+      M husband is missing, his office ransacked.
+      Find that goddamned man and get his to justice, mister." - Jean (gatilho B8, C9)
+
+Transição para 3.2 e 3.3 por comando do jogador
+
+[4 - A dedução final]
+
+A - Oswald foi raptado, não se sabe por quem
+
+B - Oswald foi raptado por Hewitt
+
+C - Oswald foi raptado por McMillan
+
+D - Oswald foi ao encontro de McMillan, Jean participa do esquema
+
+[4.A - Oswald foi raptado]
+
+Diálogo
+  ""
+
+[4.B - Oswald foi raptado por Hewitt]
