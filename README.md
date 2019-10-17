@@ -2,13 +2,15 @@ Arquivo com o histórico de programação do jogo Escape Noir. Idealizado na Adv
 
 Idealizadores: Daniel Jones, Igor Peres, Anderson Nascimento, Vanderson Balieiro
 
-Tarefas:
+Tarefas (atualizado 17/10/2019):
 
-- Enviar todo o projeto antigo para a núvem;
+- Enviar todo o projeto antigo para a núvem; (CONCLUÍDO 17/10/2019)
 - Verificar funcionalidades e condições do projeto e levantar tarefas que faltam ser executadas;
-  -
-  -
-  -
+  - adequação de fontes em geral;
+  - correção de bug dos textos (blink);
+  - implementação do sistema de deduções
+  - implementação de som;
+  - implementar botão "sair"
 - Realizar uma build e executar o jogo, verificando possíveis bugs e jogabilidade;
 - Iterar sobre o projeto como um todo e avaliar possíveis features que podem ser excluídas/adicionadas;
 
