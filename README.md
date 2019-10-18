@@ -22,3 +22,5 @@ Tarefas (atualizado 17/10/2019):
     - Falta implementar o sistema de deduções, idealizado pelo Daniel;
     - Falta implementar um sistema de sair do jogo;
     - O jogo esta sem som;
+
+-teste
