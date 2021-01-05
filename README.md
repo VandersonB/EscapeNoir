@@ -17,7 +17,7 @@ Tarefas (atualizado 17/10/2019):
 (17/10/2019) - adicionado todo o projeto antigo no Git/GitHub.
 
 (17/10/2019) - Realizado uma build do jogo velho, impressões:
-    - Cor, tamanho e fonte precisão ser ajustadas a tela, a fim de que a leitura fique mais fácil;
+    - Cor, tamanho e fonte precisam ser ajustadas a tela, a fim de que a leitura fique mais fácil;
     - Sistema de aparecimento dos textos estão falhos (aparecem na tela de forma errada, na forma de um "blink");
     - Falta implementar o sistema de deduções, idealizado pelo Daniel;
     - Falta implementar um sistema de sair do jogo;
